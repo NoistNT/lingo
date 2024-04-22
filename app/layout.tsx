@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
+import { ClerkProvider } from '@clerk/nextjs'
 import { Nunito } from 'next/font/google'
 
-import Footer from '@/components/footer'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ModeToggle } from '@/components/ui/mode-toggle'
+
 import './globals.css'
 
 const nunito = Nunito({ subsets: ['latin'] })
@@ -20,21 +20,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <body className={`${nunito.className} antialiased`}>
-        <ThemeProvider
-          disableTransitionOnChange
-          enableSystem
-          attribute="class"
-          defaultTheme="system"
-        >
-          <div className="fixed right-4 top-4">
-            <ModeToggle />
-          </div>
-          {children}
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html suppressHydrationWarning lang="en">
+        <body className={`${nunito.className} antialiased`}>
+          <ThemeProvider
+            disableTransitionOnChange
+            enableSystem
+            attribute="class"
+            defaultTheme="system"
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
