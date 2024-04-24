@@ -2,34 +2,31 @@ import {
   ClerkLoaded,
   ClerkLoading,
   SignInButton,
-  SignUpButton,
-  SignedOut
+  SignedIn,
+  SignedOut,
+  UserButton
 } from '@clerk/nextjs'
 import { Loader } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '../ui/button'
 
 export default function Login() {
   return (
-    <div className="flex w-5/6 flex-col gap-2">
+    <div>
       <ClerkLoading>
-        <Loader className="mx-auto h-5 w-5 animate-spin text-muted-foreground" />
+        <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
       </ClerkLoading>
       <ClerkLoaded>
-        <SignedOut>
-          <SignUpButton mode="modal">
-            <Button size="lg" variant="secondary">
-              Get Started
-            </Button>
-          </SignUpButton>
-        </SignedOut>
-        <SignedOut>
-          <SignInButton mode="modal">
-            <Button className="w-full" size="lg" variant="primaryOutline">
-              I already have an account.
-            </Button>
-          </SignInButton>
-        </SignedOut>
+        <div className="mr-16 flex justify-center md:mr-0">
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button variant="ghost">Sign in</Button>
+            </SignInButton>
+          </SignedOut>
+        </div>
       </ClerkLoaded>
     </div>
   )
