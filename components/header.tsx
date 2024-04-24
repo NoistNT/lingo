@@ -1,4 +1,4 @@
-import Logout from './auth/logout'
+import Login from './auth/login'
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
             Lingo
           </h1>
         </div>
-        <Logout />
+        <Login />
       </div>
     </header>
   )
