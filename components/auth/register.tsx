@@ -24,7 +24,7 @@ export default function Register() {
               Get Started
             </Button>
           </SignUpButton>
-          <SignInButton mode="modal">
+          <SignInButton forceRedirectUrl="/learn" mode="modal">
             <Button className="w-full" size="lg" variant="primaryOutline">
               I already have an account.
             </Button>
