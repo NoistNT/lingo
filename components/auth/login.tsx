@@ -22,7 +22,7 @@ export default function Login() {
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
           <SignedOut>
-            <SignInButton mode="modal">
+            <SignInButton forceRedirectUrl="/learn" mode="modal">
               <Button variant="ghost">Sign in</Button>
             </SignInButton>
           </SignedOut>
