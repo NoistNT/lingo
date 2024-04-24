@@ -3,9 +3,11 @@ import {
   ClerkLoading,
   SignInButton,
   SignUpButton,
+  SignedIn,
   SignedOut
 } from '@clerk/nextjs'
 import { Loader } from 'lucide-react'
+import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 
@@ -22,14 +24,19 @@ export default function Register() {
               Get Started
             </Button>
           </SignUpButton>
-        </SignedOut>
-        <SignedOut>
           <SignInButton mode="modal">
             <Button className="w-full" size="lg" variant="primaryOutline">
               I already have an account.
             </Button>
           </SignInButton>
         </SignedOut>
+        <SignedIn>
+          <Link href="/learn">
+            <Button className="w-full" size="lg" variant="secondary">
+              Learn
+            </Button>
+          </Link>
+        </SignedIn>
       </ClerkLoaded>
     </div>
   )
