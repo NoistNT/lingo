@@ -1,7 +1,4 @@
-import { ClerkLoaded, ClerkLoading } from '@clerk/nextjs'
-import { Loader } from 'lucide-react'
-
-import Login from '@/components/login'
+import Logout from './auth/logout'
 
 export default function Header() {
   return (
@@ -12,12 +9,7 @@ export default function Header() {
             Lingo
           </h1>
         </div>
-        <ClerkLoading>
-          <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
-        </ClerkLoading>
-        <ClerkLoaded>
-          <Login />
-        </ClerkLoaded>
+        <Logout />
       </div>
     </header>
   )
