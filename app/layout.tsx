@@ -4,7 +4,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { Nunito } from 'next/font/google'
 
 import { ThemeProvider } from '@/components/theme-provider'
-
+import { ModeToggle } from '@/components/ui/mode-toggle'
 import './globals.css'
 
 const nunito = Nunito({ subsets: ['latin'] })
@@ -29,6 +29,9 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="system"
           >
+            <div className="fixed right-4 top-1.5 z-50">
+              <ModeToggle />
+            </div>
             {children}
           </ThemeProvider>
         </body>
