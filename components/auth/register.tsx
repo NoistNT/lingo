@@ -33,7 +33,7 @@ export default function Register() {
         <SignedIn>
           <Link href="/learn">
             <Button className="w-full" size="lg" variant="secondary">
-              Learn
+              Continue learning
             </Button>
           </Link>
         </SignedIn>

@@ -17,7 +17,7 @@ export default function Login() {
         <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
       </ClerkLoading>
       <ClerkLoaded>
-        <div className="mr-16 flex justify-center md:mr-0">
+        <div className="mr-16 flex justify-center">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
