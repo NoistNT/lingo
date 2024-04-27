@@ -1,7 +1,7 @@
 'use client'
 
 export default function ErrorPage({ error }: { error: Error }) {
-  if (error instanceof Error) {
-    return <div>{error.message}</div>
-  }
+  if (error instanceof Error) return <div>{error.message}</div>
+
+  return <div>{error}</div>
 }
