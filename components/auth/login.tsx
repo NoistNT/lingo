@@ -8,21 +8,32 @@ import {
 } from '@clerk/nextjs'
 import { Loader } from 'lucide-react'
 
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
-export default function Login() {
+interface LoginProps {
+  className?: string
+  urlAfterSignIn?: string
+  urlAfterSignOut?: string
+}
+
+export default function Login({
+  className,
+  urlAfterSignIn = '/learn',
+  urlAfterSignOut = '/'
+}: LoginProps) {
   return (
-    <div>
+    <div className={cn('mr-20 lg:mr-16', className)}>
       <ClerkLoading>
         <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
       </ClerkLoading>
       <ClerkLoaded>
-        <div className="mr-16 flex justify-center">
+        <div className="flex justify-center">
           <SignedIn>
-            <UserButton afterSignOutUrl="/" />
+            <UserButton afterSignOutUrl={urlAfterSignOut} />
           </SignedIn>
           <SignedOut>
-            <SignInButton forceRedirectUrl="/learn" mode="modal">
+            <SignInButton forceRedirectUrl={urlAfterSignIn} mode="modal">
               <Button variant="ghost">Sign in</Button>
             </SignInButton>
           </SignedOut>
