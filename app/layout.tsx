@@ -4,6 +4,8 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { Nunito } from 'next/font/google'
 
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
+
 import './globals.css'
 
 const nunito = Nunito({ subsets: ['latin'] })
@@ -28,6 +30,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="system"
           >
+            <Toaster />
             {children}
           </ThemeProvider>
         </body>
