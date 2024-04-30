@@ -2,76 +2,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
+import { getCourses } from '@/db/queries'
 
-export default function Footer() {
+export default async function Footer() {
+  const courses = await getCourses()
+
   return (
-    <div className="hidden h-20 w-full items-center justify-center border-t-2 leading-[3rem] text-muted-foreground lg:flex lg:flex-col">
+    <footer className="hidden h-20 w-full items-center justify-center border-t-2 leading-[3rem] text-muted-foreground lg:flex lg:flex-col">
       <div className="mx-auto flex w-full max-w-screen-lg items-center justify-evenly">
-        <Link className="flex items-center" href="/learn">
-          <Button className="w-full font-bold" size="lg" variant="ghost">
-            <Image
-              alt="South Korea"
-              className="mr-3 rounded-sm"
-              height={32}
-              src="https://flagcdn.com/kr.svg"
-              width={36}
-            />
-            Korean
-          </Button>
-        </Link>
-        <Link className="flex items-center" href="/learn">
-          <Button className="w-full font-bold" size="lg" variant="ghost">
-            <Image
-              alt="China"
-              className="mr-3 rounded-sm"
-              height={32}
-              src="https://flagcdn.com/cn.svg"
-              width={36}
-            />
-            Chinese
-          </Button>
-        </Link>
-        <Link className="flex items-center" href="/learn">
-          <Button className="w-full font-bold" size="lg" variant="ghost">
-            <Image
-              alt="Spanish"
-              className="mr-3 rounded-sm"
-              height={32}
-              src="https://flagcdn.com/es.svg"
-              width={36}
-            />
-            Spanish
-          </Button>
-        </Link>
-        <Link className="flex items-center" href="/learn">
-          <Button className="w-full font-bold" size="lg" variant="ghost">
-            <Image
-              alt="French"
-              className="mr-3 rounded-sm"
-              height={32}
-              src="https://flagcdn.com/fr.svg"
-              width={36}
-            />
-            French
-          </Button>
-        </Link>
-        <Link className="flex items-center" href="/learn">
-          <Button className="w-full font-bold" size="lg" variant="ghost">
-            <Image
-              alt="Deutsch"
-              className="mr-3 rounded-sm"
-              height={32}
-              src="https://flagcdn.com/de.svg"
-              width={36}
-            />
-            Deutsch
-          </Button>
-        </Link>
+        {courses.map(({ id, title, imgSrc }) => (
+          <Link key={id} className="flex items-center" href="/learn">
+            <Button className="w-full font-bold" size="lg" variant="ghost">
+              <Image
+                alt={title}
+                className="mr-3 rounded-sm"
+                height={32}
+                src={imgSrc}
+                width={36}
+              />
+              {title}
+            </Button>
+          </Link>
+        ))}
       </div>
-      <div className="absolute hidden opacity-80 filter xl:bottom-2 xl:right-4 xl:flex 2xl:right-6">
+      <div className="absolute bottom-5 right-4 hidden opacity-80 filter xl:flex 2xl:right-6">
         <div className="flex flex-col items-center">
-          Made with ❤️ by
-          <Button size="sm" variant="link">
+          <span className="text-sm leading-relaxed">Made with ❤️ by</span>
+          <Button className="h-auto" size="sm" variant="link">
             <Link
               className="text-sky-700 hover:underline dark:text-cyan-400"
               href="https://github.com/NoistNT"
@@ -82,6 +39,6 @@ export default function Footer() {
           </Button>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
