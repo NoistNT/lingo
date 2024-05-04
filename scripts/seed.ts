@@ -46,13 +46,6 @@ const lessons = [
     title: 'Hangul Basics',
     description: 'Learn the basics of Hangul',
     order: 1
-  },
-  {
-    id: 2,
-    unitId: 1,
-    title: 'Hangul Basics 2',
-    description: 'Learn the basics of Hangul 2',
-    order: 2
   }
 ]
 
