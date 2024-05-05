@@ -3,17 +3,26 @@ import { eq } from 'drizzle-orm'
 import { cache } from 'react'
 
 import { db } from '@/db/drizzle'
-import { courses, units, userProgress } from '@/db/schema'
+import { challengeProgress, courses, units, userProgress } from '@/db/schema'
 
 export const getUnits = cache(async () => {
+  const { userId } = auth()
   const userProgress = await getUserProgress()
 
-  if (!userProgress?.activeCourseId) return []
+  if (!userId || !userProgress?.activeCourseId) return []
 
   const data = await db.query.units.findMany({
     where: eq(units.courseId, userProgress.activeCourseId),
     with: {
-      lessons: { with: { challenges: { with: { challengeProgress: true } } } }
+      lessons: {
+        with: {
+          challenges: {
+            with: {
+              challengeProgress: { where: eq(challengeProgress.userId, userId) }
+            }
+          }
+        }
+      }
     }
   })
 
