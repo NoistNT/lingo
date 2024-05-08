@@ -37,7 +37,9 @@ const buttonVariants = cva(
         sidebar:
           'bg-transparent text-muted-foreground border-2 border-transparent hover:bg-primary-foreground transition-none',
         sidebarOutline:
-          'bg-sky-500/15 text-sky-500 border-2 border-sky-300 hover:bg-primary-foreground hover:bg-sky-500/20 transition-none'
+          'bg-sky-500/15 text-sky-500 border-2 border-sky-300 hover:bg-primary-foreground hover:bg-sky-500/20 transition-none',
+        locked:
+          'bg-sky-500/15 text-sky-500 border-2 border-neutral-300 hover:bg-primary-foreground hover:bg-neutral-500/20 transition-none'
       },
       size: {
         default: 'h-10 px-4 py-2',
