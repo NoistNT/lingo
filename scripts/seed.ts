@@ -46,6 +46,34 @@ const lessons = [
     title: 'Hangul Basics',
     description: 'Learn the basics of Hangul',
     order: 1
+  },
+  {
+    id: 2,
+    unitId: 1,
+    title: 'Vocabulary',
+    description: 'Learn the basics of Hangul',
+    order: 2
+  },
+  {
+    id: 3,
+    unitId: 1,
+    title: 'Grammar',
+    description: 'Learn the basics of Hangul',
+    order: 3
+  },
+  {
+    id: 4,
+    unitId: 1,
+    title: 'Phrases',
+    description: 'Learn the basics of Hangul',
+    order: 4
+  },
+  {
+    id: 5,
+    unitId: 1,
+    title: 'Examples',
+    description: 'Learn the basics of Hangul',
+    order: 5
   }
 ]
 
