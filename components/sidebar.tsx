@@ -14,7 +14,7 @@ export default function SideBar({ className }: { className?: string }) {
     >
       <div className="flex items-center py-7 pl-4">
         <Link href="/learn">
-          <h1 className="text-2xl font-extrabold tracking-wide text-emerald-500">
+          <h1 className="text-2xl font-extrabold tracking-wide text-green-500">
             Lingo
           </h1>
         </Link>

@@ -18,9 +18,9 @@ const buttonVariants = cva(
         primaryOutline:
           'bg-secondary-muted hover:bg-primary-foreground text-cyan-500 dark:text-cyan-600',
         secondary:
-          'bg-emerald-500 text-primary-foreground border-emerald-600 dark:border-emerald-700/90 border-b-4 hover:bg-emerald-500/90 dark:hover:bg-emerald-400/95 active:border-b-2 dark:active:border-emerald-500 dark:active:border-emerald-700',
+          'bg-green-500 text-primary-foreground border-green-600 dark:border-green-700/90 border-b-4 hover:bg-green-500/90 dark:hover:bg-green-400/95 active:border-b-2 dark:active:border-green-500 dark:active:border-green-700',
         secondaryOutline:
-          'bg-secondary-muted hover:bg-primary-foreground text-emerald-500',
+          'bg-secondary-muted hover:bg-primary-foreground text-green-500',
         super:
           'bg-indigo-500/85 dark:bg-indigo-500 text-primary-foreground border-indigo-600/70 dark:border-indigo-700/80 border-b-4 hover:bg-indigo-500/90 dark:hover:bg-indigo-500/95 active:border-b-2 dark:active:border-indigo-700/90',
         superOutline:
@@ -39,13 +39,14 @@ const buttonVariants = cva(
         sidebarOutline:
           'bg-sky-500/15 text-sky-500 border-2 border-sky-300 hover:bg-primary-foreground hover:bg-sky-500/20 transition-none',
         locked:
-          'bg-sky-500/15 text-sky-500 border-2 border-neutral-300 hover:bg-primary-foreground hover:bg-neutral-500/20 transition-none'
+          'bg-neutral-200/15 text-primary-foreground border-b-4 active:border-b-0 border-neutral-400 hover:bg-neutral-200/90 transition-none dark:border-neutral-700'
       },
       size: {
-        default: 'h-10 px-4 py-2',
+        default: 'h-11 px-4 py-2',
         sm: 'h-9 px-3 text-xs',
-        lg: 'h-12 px-6',
-        icon: 'h-10 w-10'
+        lg: 'h-12 px-8',
+        icon: 'h-10 w-10',
+        rounded: 'rounded-full'
       }
     },
     defaultVariants: {

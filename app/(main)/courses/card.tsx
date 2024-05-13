@@ -32,7 +32,7 @@ export default function Card({
       <div className="flex min-h-6 w-full items-center justify-end">
         {active ? (
           <div className="flex items-center justify-center p-0">
-            <Check className="h-5 w-5 rounded-sm bg-emerald-600 stroke-[4] p-1 text-white" />
+            <Check className="h-5 w-5 rounded-sm bg-green-600 stroke-[4] p-1 text-white" />
           </div>
         ) : null}
       </div>

@@ -8,7 +8,7 @@ export default function Header() {
       <div className="mx-auto flex h-full items-center justify-between lg:max-w-screen-lg">
         <Link href="/learn">
           <div className="flex items-center py-7 pl-4">
-            <h1 className="text-2xl font-extrabold tracking-wide text-emerald-500">
+            <h1 className="text-2xl font-extrabold tracking-wide text-green-500">
               Lingo
             </h1>
           </div>
