@@ -18,7 +18,7 @@ export default function Lessons({
   return (
     <div className="relative flex flex-col items-center">
       {lessons.map(({ id, title, description, completed }) => {
-        const isCurrent = true || id === activeLesson?.id // TODO: Remove hardcoded true
+        const isCurrent = id === activeLesson?.id
         const isLocked = !completed && !isCurrent
 
         return (
