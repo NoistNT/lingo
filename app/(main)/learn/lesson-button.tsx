@@ -70,7 +70,7 @@ export default function LessonButton({
           >
             <StartLessonTooltip />
             <Button
-              className="absolute h-16 w-16 border-b-8"
+              className="absolute size-16 border-b-8"
               size="rounded"
               variant={locked ? 'locked' : 'secondary'}
             >
@@ -86,7 +86,21 @@ export default function LessonButton({
             </Button>
           </CircularProgressbarWithChildren>
         ) : (
-          <Icon className="h-14 w-6 stroke-2 text-neutral-400 dark:text-neutral-500" />
+          <Button
+            className="size-16 border-b-8"
+            size="rounded"
+            variant={locked ? 'locked' : 'secondary'}
+          >
+            <Icon
+              className={cn(
+                'h-14 w-6',
+                locked
+                  ? 'fill-neutral-400 stroke-neutral-400 text-neutral-400'
+                  : 'fill-primary-foreground text-primary-foreground',
+                isCompleted && 'fill-none stroke-[4]'
+              )}
+            />
+          </Button>
         )}
       </div>
     </Link>
