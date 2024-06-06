@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Nunito } from 'next/font/google'
 
+import ExitModal from '@/components/modals/exit-modal'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
-
 import './globals.css'
 
 const nunito = Nunito({ subsets: ['latin'] })
@@ -31,6 +31,7 @@ export default function RootLayout({
             defaultTheme="system"
           >
             <Toaster />
+            <ExitModal />
             {children}
           </ThemeProvider>
         </body>
