@@ -55,6 +55,12 @@ export const lessonsRelations = relations(lessons, ({ one, many }) => ({
   challenges: many(challenges)
 }))
 
+export enum ChallengeStatus {
+  Correct = 'correct',
+  Incorrect = 'incorrect',
+  Unselected = 'unselected'
+}
+
 export const challengesEnum = pgEnum('type', ['SELECT', 'ASSIST'])
 
 export const challenges = pgTable('challenges', {
