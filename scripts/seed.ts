@@ -107,10 +107,10 @@ const challengeOptions = [
   {
     id: 3,
     challengeId: 1,
-    text: '사람',
-    imgSrc: '/person.svg',
+    text: '로봇',
+    imgSrc: '/robot.svg',
     correct: false,
-    audioSrc: '/audio/kr/person.mp3'
+    audioSrc: '/audio/kr/robot.mp3'
   }
 ]
 
