@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import Login from '@/components/auth/login'
@@ -13,7 +14,8 @@ export default function SideBar({ className }: { className?: string }) {
       )}
     >
       <div className="flex items-center py-7 pl-4">
-        <Link href="/learn">
+        <Link className="flex items-center gap-x-2.5" href="/learn">
+          <Image alt="Mascot" height={48} src="/mascot.svg" width={48} />
           <h1 className="text-2xl font-extrabold tracking-wide text-green-500">
             Lingo
           </h1>
