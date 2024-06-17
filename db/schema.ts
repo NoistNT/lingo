@@ -8,6 +8,7 @@ import {
   text
 } from 'drizzle-orm/pg-core'
 
+// Courses
 export const courses = pgTable('courses', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
@@ -19,6 +20,7 @@ export const coursesRelations = relations(courses, ({ many }) => ({
   units: many(units)
 }))
 
+// Units
 export const units = pgTable('units', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
@@ -37,6 +39,7 @@ export const unitsRelations = relations(units, ({ one, many }) => ({
   lessons: many(lessons)
 }))
 
+// Lessons
 export const lessons = pgTable('lessons', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
@@ -55,13 +58,28 @@ export const lessonsRelations = relations(lessons, ({ one, many }) => ({
   challenges: many(challenges)
 }))
 
+// Chanllenges
 export enum ChallengeStatus {
-  Correct = 'correct',
-  Incorrect = 'incorrect',
-  Unselected = 'unselected'
+  CORRECT = 'CORRECT',
+  INCORRECT = 'INCORRECT',
+  UNSELECTED = 'UNSELECTED'
 }
 
-export const challengesEnum = pgEnum('type', ['SELECT', 'ASSIST'])
+export const challengeStatusEnum = pgEnum('status', [
+  ChallengeStatus.CORRECT,
+  ChallengeStatus.INCORRECT,
+  ChallengeStatus.UNSELECTED
+])
+
+export enum ChallengeType {
+  ASSIST = 'ASSIST',
+  SELECT = 'SELECT'
+}
+
+export const challengesEnum = pgEnum('type', [
+  ChallengeType.ASSIST,
+  ChallengeType.SELECT
+])
 
 export const challenges = pgTable('challenges', {
   id: serial('id').primaryKey(),
@@ -122,6 +140,7 @@ export const challengeProgressRelations = relations(
   })
 )
 
+// User Progress
 export const userProgress = pgTable('user_progress', {
   userId: text('user_id').primaryKey(),
   userName: text('user_name').notNull().default('User'),
